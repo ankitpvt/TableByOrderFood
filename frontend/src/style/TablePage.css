@@ -1,0 +1,179 @@
+/* =============================
+   🌟 Restaurant Table Page Style
+   ============================= */
+
+/* 🌈 Page background & layout */
+body {
+  background: linear-gradient(135deg, #1e1f29, #2b2c3a);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: #f1f1f1;
+}
+
+.table-page {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* 🏷️ Title */
+.table-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ffb703;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* 📋 Add Table Form */
+.table-form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.table-form input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  background: #2e2f3b;
+  color: white;
+  outline: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.table-form input:focus {
+  background: #3b3c49;
+  box-shadow: 0 0 5px #ffb703;
+}
+
+.table-form button {
+  background: #ffb703;
+  color: #1e1f29;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.table-form button:hover {
+  background: #fca311;
+  transform: scale(1.05);
+}
+
+/* 🪑 Table Cards Layout */
+.table-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* 🧾 Table Card */
+.table-card {
+  background: #252634;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.table-card:hover {
+  transform: translateY(-8px);
+  background: #2e3040;
+}
+
+/* 🍽️ Table Info */
+.table-card h2 {
+  color: #ffb703;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.table-card p {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* 🔘 Buttons */
+.table-card button {
+  margin: 5px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.table-card .view-btn {
+  background: #06d6a0;
+  color: #fff;
+}
+
+.table-card .view-btn:hover {
+  background: #05c08d;
+}
+
+.table-card .delete-btn {
+  background: #ef233c;
+  color: #fff;
+}
+
+.table-card .delete-btn:hover {
+  background: #d90429;
+}
+
+/* 🌟 Bottom Navigation Buttons */
+.bottom-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.bottom-btn {
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 💚 Menu Button */
+.bottom-btn:first-child {
+  background: linear-gradient(135deg, #007bff, #6a11cb);
+}
+
+.bottom-btn:first-child:hover {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  transform: translateY(-3px);
+}
+
+/* ❤️ Admin Button */
+.bottom-btn:last-child {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+.bottom-btn:last-child:hover {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  transform: translateY(-3px);
+}
+
+
+
