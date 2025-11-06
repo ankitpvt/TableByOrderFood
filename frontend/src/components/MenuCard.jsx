@@ -12,7 +12,7 @@ const MenuCard = () => {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/menu");
+        const response = await axios.get("https://tablebyorderfood.onrender.com/api/menu");
         setMenu(response.data);
       } catch (err) {
         console.error("Error fetching menu:", err);
@@ -27,7 +27,7 @@ const MenuCard = () => {
 
     const order = { customerName, items: [item] };
     try {
-      const response = await axios.post("http://localhost:4000/api/orders", order);
+      const response = await axios.post("https://tablebyorderfood.onrender.com/api/orders", order);
       toast.success(`Order placed successfully! 🍴 Order ID: ${response.data._id}`);
     } catch (err) {
       console.error("Error placing order:", err);

@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { io } from "socket.io-client";
 import "../style/AdminPage.css";
 
-const socket = io("http://localhost:4000");
+const socket = io("https://tablebyorderfood.onrender.com");
 
 const AdminPage = () => {
   const [orders, setOrders] = useState([]);
@@ -15,7 +15,7 @@ const AdminPage = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/orders");
+        const response = await axios.get("https://tablebyorderfood.onrender.com/api/orders");
         setOrders(response.data);
       } catch (error) {
         console.error("Error fetching orders:", error);
