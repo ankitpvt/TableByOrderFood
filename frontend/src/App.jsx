@@ -6,7 +6,7 @@ import AdminPage from "./components/AdminPage";
 import TablePage from "./components/TablePage";
 import TableMenuPage from "./components/TableMenu";
 import Login from "./components/Login";
-import Setting from "./components/setting";
+import Setting from "./components/Setting";
 import AddTables from "./components/AddTables";
 const App = () => {
 
