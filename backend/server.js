@@ -76,13 +76,16 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const http = require('http');
 // const { Server } = require('socket.io');
-
+const path = require('path');
 const menuRoutes = require('./routes/menuRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const tableRoutes = require('./routes/tableRoutes');
 
 const app = express();
 const server = http.createServer(app);
+
+const _dirname = path.resolve();
+
 
 // ✅ Middleware
 app.use(bodyParser.json());
@@ -131,6 +134,12 @@ app.use('/api/tables', tableRoutes);
 app.get('/', (req, res) => {
   res.send("Backend server is running fine!");
 });
+
+app.use(express.static(path.join(_dirname, "/frontend/dist")));
+app.get('*', (_,res) => {
+    res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
+});
+
 
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => console.log(`🚀 Backend running at port ${PORT}`));
