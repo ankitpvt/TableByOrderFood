@@ -3,10 +3,10 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { io } from "socket.io-client";
+// import { io } from "socket.io-client";
 import "../style/AdminPage.css";
 
-const socket = io("https://tablebyorderfood.onrender.com");
+// const socket = io("https://tablebyorderfood.onrender.com");
 
 const AdminPage = () => {
   const [orders, setOrders] = useState([]);
@@ -23,12 +23,12 @@ const AdminPage = () => {
     };
     fetchOrders();
 
-    socket.on("newOrder", (newOrder) => {
-      setOrders((prevOrders) => [...prevOrders, newOrder]);
-      toast.info(`New order received from ${newOrder.customerName}!`);
-    });
+    // socket.on("newOrder", (newOrder) => {
+    //   setOrders((prevOrders) => [...prevOrders, newOrder]);
+    //   toast.info(`New order received from ${newOrder.customerName}!`);
+    // });
 
-    return () => socket.off("newOrder");
+    // return () => socket.off("newOrder");
   }, []);
 
   // Delete entire customer
