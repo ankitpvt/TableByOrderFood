@@ -12,7 +12,7 @@ const TablePage = () => {
 
   useEffect(() => {
     const fetchTables = async () => {
-      const res = await axios.get("https://tablebyorderfood.onrender.com/api/tables");
+      const res = await axios.get("https://tablebyorderfood-1-backend.onrender.com/api/tables");
       setTables(res.data);
     };
     fetchTables();
@@ -21,7 +21,7 @@ const TablePage = () => {
   const addTable = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://tablebyorderfood.onrender.com/api/tables", {
+      const res = await axios.post("https://tablebyorderfood-1-backend.onrender.com/api/tables", {
         tableNumber,
         capacity,
       });
@@ -36,7 +36,7 @@ const TablePage = () => {
   };
 
   const deleteTable = async (id) => {
-    await axios.delete(`https://tablebyorderfood.onrender.com/api/tables/${id}`);
+    await axios.delete(`https://tablebyorderfood-1-backend.onrender.com/api/tables/${id}`);
     setTables(tables.filter((t) => t._id !== id));
   };
 

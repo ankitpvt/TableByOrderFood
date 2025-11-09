@@ -12,7 +12,7 @@ const TableMenuPage = () => {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const res = await axios.get("https://tablebyorderfood.onrender.com/api/menu");
+        const res = await axios.get("https://tablebyorderfood-1-backend.onrender.com/api/menu");
         setMenu(res.data);
       } catch (err) {
         console.error(err);
@@ -30,7 +30,7 @@ const TableMenuPage = () => {
     };
 
     try {
-      await axios.post("https://tablebyorderfood.onrender.com/api/orders", order);
+      await axios.post("https://tablebyorderfood-1-backend.onrender.com/api/orders", order);
       toast.success(`Order for Table ${tableNumber} placed successfully!`);
     } catch (err) {
       console.error(err);

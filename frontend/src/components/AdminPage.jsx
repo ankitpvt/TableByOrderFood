@@ -15,7 +15,7 @@ const AdminPage = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("https://tablebyorderfood.onrender.com/api/orders");
+        const response = await axios.get("https://tablebyorderfood-1-backend.onrender.com/api/orders");
         setOrders(response.data);
       } catch (error) {
         console.error("Error fetching orders:", error);
