@@ -135,10 +135,10 @@ app.use('/api/tables', tableRoutes);
 //   res.send("Backend server is running fine!");
 // });
 
-app.use(express.static(path.join(_dirname, "/frontend/build")));
-
-app.use((req, res) => {
-  res.sendFile(path.resolve(_dirname, "frontend", "build", "index.html"));
+app.use(express.static(path.join(_dirname, "/frontend/dist")));
+app.get('*', (_,res) => {
+    res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
 });
+
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => console.log(`🚀 Backend running at port ${PORT}`));
