@@ -13,7 +13,7 @@ const AddMenu = () => {
     useEffect(() => {
         const fetchMenu = async () => {
             try {
-                const response = await axios.get('https://tablebyorderfood-1-backend.onrender.com/api/menu');
+                const response = await axios.get('https://tablebyorderfood-2.onrender.com/api/menu');
                 setMenu(response.data);
             } catch (error) {
                 console.error('Error fetching menu items:', error);
@@ -27,7 +27,7 @@ const AddMenu = () => {
         e.preventDefault();
         const newMenuItem = { name, price, category };
         try {
-            const response = await axios.post('https://tablebyorderfood-1-backend.onrender.com/api/menu', newMenuItem);
+            const response = await axios.post('https://tablebyorderfood-2.onrender.com/api/menu', newMenuItem);
             setMenu((prevMenu) => [...prevMenu, response.data]);
             setName('');
             setPrice('');
@@ -42,7 +42,7 @@ const AddMenu = () => {
     // Delete a menu item
     const deleteMenu = async (id) => {
         try {
-            await axios.delete(`https://tablebyorderfood-1-backend.onrender.com/api/menu/${id}`);
+            await axios.delete(`https://tablebyorderfood-2.onrender.com/api/menu/${id}`);
             setMenu(menu.filter((item) => item._id !== id));
             alert('Menu item deleted successfully!');
         } catch (error) {

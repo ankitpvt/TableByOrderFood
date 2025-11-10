@@ -12,7 +12,7 @@ const TableMenuPage = () => {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const res = await axios.get("https://tablebyorderfood-1-backend.onrender.com/api/menu");
+        const res = await axios.get("https://tablebyorderfood-2.onrender.com/api/menu");
         setMenu(res.data);
       } catch (err) {
         console.error(err);
