@@ -75,7 +75,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const http = require('http');
-// const { Server } = require('socket.io');
+ const { Server } = require('socket.io');
 const path = require('path');
 const menuRoutes = require('./routes/menuRoutes');
 const orderRoutes = require('./routes/orderRoutes');
@@ -98,24 +98,24 @@ app.use(cors({
 }));
 
 // ✅ Socket.io setup
-// const io = new Server(server, {
-//   cors: {
-//     origin: process.env.FRONTEND_URL,
-//     methods: ['GET', 'POST']
-//   }
-// });
+ const io = new Server(server, {
+   cors: {
+     origin: process.env.FRONTEND_URL,
+    methods: ['GET', 'POST']
+   }
+ });
 
-// app.use((req, res, next) => {
-//   req.io = io;
-//   next();
-// });
+ app.use((req, res, next) => {
+  req.io = io;
+  next();
+});
 
-// io.on('connection', (socket) => {
-//   console.log('✅ A user connected:', socket.id);
-//   socket.on('disconnect', () => {
-//     console.log('❌ User disconnected:', socket.id);
-//   });
-// });
+io.on('connection', (socket) => {
+  console.log('✅ A user connected:', socket.id);
+  socket.on('disconnect', () => {
+    console.log('❌ User disconnected:', socket.id);
+  });
+ });
 
 // ✅ MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
