@@ -136,8 +136,8 @@ app.use('/api/tables', tableRoutes);
 // });
 
 app.use(express.static(path.join(_dirname, "/frontend/dist")));
-app.get('*', (_,res) => {
-    res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
+app.get(/.*/, (_, res) => {
+  res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
 });
 
 const PORT = process.env.PORT || 4000;
