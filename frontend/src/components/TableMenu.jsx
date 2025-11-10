@@ -30,7 +30,7 @@ const TableMenuPage = () => {
     };
 
     try {
-      await axios.post("https://tablebyorderfood-1-backend.onrender.com/api/orders", order);
+      await axios.post("https://tablebyorderfood-2.onrender.com/api/orders", order);
       toast.success(`Order for Table ${tableNumber} placed successfully!`);
     } catch (err) {
       console.error(err);
