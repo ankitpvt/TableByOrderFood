@@ -131,9 +131,9 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/tables', tableRoutes);
 
 // ✅ Default route
-app.get('/', (req, res) => {
-  res.send("Backend server is running fine!");
-});
+// app.get('/', (req, res) => {
+//   res.send("Backend server is running fine!");
+// });
 
 app.use(express.static(path.join(_dirname, "/frontend/build")));
 
